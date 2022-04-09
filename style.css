@@ -1,3 +1,42 @@
 .todo-item {
   display: flex;
+  flex-direction: row-reverse;
+}
+
+body {
+  background-color: bisque;
+}
+
+.button {
+  background-color: #542747;
+  color: rgb(252, 252, 252);
+  border-color: rgb(139, 91, 133);
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 10;
+}
+
+.list {
+  padding: 150px;
+  align-items: flex-start;
+}
+
+.component {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: left;
+  padding: 200px;
+  height: 100px;
+}
+
+.border {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 0;
+  background-color: #f7f7f7;
+}
+
+.font {
+  color: #00000e;
+  font-family: "Times New Roman", Times, serif;
 }
