@@ -41,7 +41,6 @@
         <h1 class="font">Filter By Category</h1>
         <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
         <select id="categories-list-filter" title="All"></select>
-        <button class="button" id="btn" onclick="filterTasks()">Filter</button>
         <!-- DONE for filtering thing -->
         <div>
           <input
@@ -49,9 +48,11 @@
             name="done"
             id="done"
             onclick="filterTasks()"
-            onclick="taskChecked()"
           />
           <label class="font" for="done">Filter by done</label>
+          <button class="button" id="btn" onclick="filterTasks()">
+            Filter
+          </button>
         </div>
         <hr />
       </div>

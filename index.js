@@ -21,22 +21,18 @@ function taskChecked(taskId, checked) {
   // implement the delete task.
   // You are given the task id
   taskChecked.find((task) => task.id === taskId).done = checked;
-  alert(`${checked ? "" : "UN"}CHECKED TASK`, taskId);
+  renderTasks(tasks, "tasks-list");
+  //alert(`${checked ? "" : "UN"}CHECKED TASK`, taskId);
 }
 
 function addTask() {
   const selectedCategory = getSelectedCategoryById(CATEGORY_SELECTOR);
   const taskTitle = getNewTaskText();
   // continue the code here
-  if (selectedCategory === "Select Continent") {
-    selectedCategory = "Uncategorized";
-    alert("choose category");
-  }
 
-  let iterations = 0;
-  iterations++;
+  const idNumber = tasks.length;
   const taskInput = {
-    id: iterations,
+    id: idNumber,
     title: taskTitle,
     category: selectedCategory,
     done: false,
@@ -58,19 +54,10 @@ function addCategory() {
 function filterTasks() {
   const selectedCategory = getSelectedCategoryById(CATEGORY_FILTER);
   const done = getFilteredDone();
-  // continue the code here
-  if (done) {
-    let filteredTasks = tasks.filter(
-      (task) => task["category"] === selectedCategory && task["done"] === true
-    );
-  } else {
-    let filteredTasks = tasks.filter(
-      (task) => task["category"] === selectedCategory
-    );
-  }
 
-  alert(`Category: ${selectedCategory} | done: ${done}`);
-  renderTasks(filterTasks, "tasks-list");
+  complete = tasks.filter(
+    (task) => task.category === selectedCategory && task.done === done
+  );
 
-  // REMOVE ME: sample alert
+  renderTasks(complete, "tasks-list");
 }
