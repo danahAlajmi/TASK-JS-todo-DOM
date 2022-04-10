@@ -20,7 +20,8 @@ renderTasks(tasks, "tasks-list");
 function taskChecked(taskId, checked) {
   // implement the delete task.
   // You are given the task id
-  taskChecked.find((task) => task.id === taskId).done = checked;
+  a = tasks.find((task) => task.id === taskId);
+  a.done = checked;
   renderTasks(tasks, "tasks-list");
   //alert(`${checked ? "" : "UN"}CHECKED TASK`, taskId);
 }
@@ -46,18 +47,28 @@ function addCategory() {
   const newCategory = getNewCategoryText();
   // continue the code here
   categories.push(newCategory);
-  alert(`New category was added: ${newCategory}`);
-  renderCategories(categories, CATEGORY_SELECTOR);
-  renderCategories(categories, CATEGORY_FILTER);
+  //alert(`New category was added: ${newCategory}`);
+  renderCategories(categories, "categories-list");
+  renderCategories(categories, "categories-list-filter");
 }
 
 function filterTasks() {
   const selectedCategory = getSelectedCategoryById(CATEGORY_FILTER);
   const done = getFilteredDone();
+  // continue the code here
+  // REMOVE ME: sample alert
 
+  // if (done) {
+  //   var filteredTasks = tasks.filter(
+  //     (task) => task["category"] === selectedCategory && task["done"] === true
+  //   );
+  // } else {
+  //   var filteredTasks = tasks.filter(
+  //     (task) => task["category"] === selectedCategory
+  //   );
+  // }
   complete = tasks.filter(
     (task) => task.category === selectedCategory && task.done === done
   );
-
   renderTasks(complete, "tasks-list");
 }

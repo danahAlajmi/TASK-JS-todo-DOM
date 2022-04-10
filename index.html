@@ -21,7 +21,7 @@
           id="new-task"
           placeholder="* Add a new task"
         />
-        <button class="button" onclick="addTask()">Add Task</button>
+        <button onclick="addTask()" class="button">Add Task</button>
       </div>
 
       <div>
@@ -32,7 +32,7 @@
           id="new-category"
           placeholder="* Add a new category"
         />
-        <button class="button" onclick="addCategory()">Add Category</button>
+        <button onclick="addCategory()" class="button">Add Category</button>
       </div>
     </div>
     <!-- FILTERING DIV -->
@@ -41,18 +41,12 @@
         <h1 class="font">Filter By Category</h1>
         <!-- KEEP THE SELECT EMPTY. IT WILL BE FILLED BY JS  -->
         <select id="categories-list-filter" title="All"></select>
+
         <!-- DONE for filtering thing -->
         <div>
-          <input
-            type="checkbox"
-            name="done"
-            id="done"
-            onclick="filterTasks()"
-          />
+          <input type="checkbox" name="done" id="done" />
           <label class="font" for="done">Filter by done</label>
-          <button class="button" id="btn" onclick="filterTasks()">
-            Filter
-          </button>
+          <button onclick="filterTasks()" class="button">Filter</button>
         </div>
         <hr />
       </div>
